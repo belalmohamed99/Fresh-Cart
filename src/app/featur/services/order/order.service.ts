@@ -16,7 +16,7 @@ export class OrderService {
    ordersNumber:BehaviorSubject<number> = new BehaviorSubject(0)
 
    onlinePayment(data:object , cartId:string): Observable<any> {
-    return this._httpClient.post(`${environment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://e-commerce-fresh-cart-rho.vercel.app/${this.encodedChar}`, {
+    return this._httpClient.post(`${environment.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://fresh-cart-gamma-seven.vercel.app//${this.encodedChar}`, {
       shippingAddress : data
     });
   }
