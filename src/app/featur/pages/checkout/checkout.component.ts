@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.paymentForm = this._formBuilder.group({
       details : [null , [Validators.required]],
-      phone : [null , [Validators.required , Validators.pattern(/^01[0125][0-9]{8}$/)]],
+      phone : [null , [Validators.required , Validators.pattern(/^(\+201|01|00201)[0-2,5]{1}[0-9]{8}/)]],
       city : [null , [Validators.required]]
     });
 
