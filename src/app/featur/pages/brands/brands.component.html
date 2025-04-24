@@ -1,0 +1,44 @@
+<section class="pt-24 pb-16">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      @for (brand of allBrands; track brand._id) {
+        <div (click)="getSpecificBrand(brand._id)" class="category-card shadow-md rounded-lg hover:shadow-main transition duration-300 ease-in-out pb-7 cursor-pointer">
+          <div class="img-category "  >
+            <img class=" object-cover w-full" [src]="brand.image" alt="category.name">
+          </div>
+          <div class="text-center text-main">
+            <h3 class="text-xl font-bold"> {{brand.name}} </h3>
+          </div>
+        </div>
+      }
+
+
+    </div>
+  </div>
+</section>
+
+
+@if(specificBrand){
+  <div class="fixed inset-0 bg-[rgba(0,0,0,0.5)] z-[90]  h-full flex items-center justify-center">
+    <div class="  w-[500px]  text-center bg-white p-5">
+     <div class=" text-right border-b-2 pb-2">
+      <i (click)="removeBrandData()" class="fa-solid fa-xmark hover:opacity-80 cursor-pointer text-[25px]"></i>
+     </div>
+
+     <div class="flex justify-between items-center gap-20">
+
+        <div class="text-left">
+          <h3 class="text-[35px] text-main font-semibold"> {{specificBrand.name}} </h3>
+          <h6>{{specificBrand.name}} </h6>
+        </div>
+
+        <div>
+          <img class="w-full" [src]="specificBrand.image" alt="blog">
+        </div>
+     </div>
+
+    </div>
+  </div>
+
+}
